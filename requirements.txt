@@ -1,0 +1,6 @@
+babelfish==0.5.5
+guessit==2.0.5
+pyopensubtitles==0.1
+python-dateutil==2.5.1
+rebulk==0.7.2
+six==1.10.0

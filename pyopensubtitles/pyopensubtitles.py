@@ -1,6 +1,8 @@
+from guessit import guessit
 import xmlrpclib
 import zlib
 from settings import *
+from . import exceptions
 
 class PyOpenSubtitles:
     def __init__(self):
@@ -11,13 +13,35 @@ class PyOpenSubtitles:
 
         self.token = session['token']
 
-    def search_subtitle(self, query, season, episode):
+    def guess_parameters(self, filename):
+        params = guessit(filename)
+        retval = dict()
+        try:
+            retval['title'] = params['title']
+        except KeyError:
+            raise GuessError("Cannot guess title")
+
+        try:
+            retval['season'] = params['season']
+            retval['episode'] = params['episode']
+        except KeyError:
+            pass
+
+        return retval
+
+    def search_subtitle(self, query, season=None, episode=None):
+
         payload = {
                 'query' : query,
-                'season' : season,
-                'episode': episode,
                 'sublanguageid' : LANGUAGE,
         }
+
+        if season != None:
+            payload['season'] = season
+
+            if episode != None:
+                payload['episode'] = episode
+
 
         option = {
                 'limit' : 10
@@ -35,10 +59,3 @@ class PyOpenSubtitles:
 
     def makecall(self):
         pass
-
-class LoginError:
-    def __init__(self):
-        self.value = value
-    def __str__(self):
-        return repr(self.value)
-
