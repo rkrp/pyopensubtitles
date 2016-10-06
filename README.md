@@ -33,17 +33,6 @@ This will automatically download the subtitle for the given movie or a TV series
       --episode EPISODE     episode number
 
 
-
-    usage: fetchsubs.py [-h] show season episode
-
-    positional arguments:
-      show
-      season
-      episode
-
-    optional arguments:
-      -h, --help  show this help message and exit
-
 You can also download manually by
 
     fetchsubs.py --mode manual  --season 01 --episode 01 "breaking bad"
