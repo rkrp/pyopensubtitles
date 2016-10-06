@@ -13,11 +13,11 @@ default value to the one you obtain after signing up from [OpenSubtitles.org]
 Usage
 -----
 
-####Automatic Downloading of subtitles from movie/episode filename
+####Quickstart
 
     fetchsubs.py The.Secret.Life.of.Walter.Mitty.2013.720p.BluRay.x264.YIFY.mp4
 
-This will download 
+This will automatically download the subtitle for the given movie or a TV series episode.
 
     usage: fetchsubs.py [-h] [--mode {auto,manual}] [--season SEASON]
                         [--episode EPISODE]
@@ -44,9 +44,9 @@ This will download
     optional arguments:
       -h, --help  show this help message and exit
 
-For example,
+You can also download manually by
 
-    fetchsubs.py "Breaking Bad" 01 01
+    fetchsubs.py --mode manual  --season 01 --episode 01 "breaking bad"
 
 
 Credits
