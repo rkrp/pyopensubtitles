@@ -13,6 +13,27 @@ default value to the one you obtain after signing up from [OpenSubtitles.org]
 Usage
 -----
 
+####Automatic Downloading of subtitles from movie/episode filename
+
+    fetchsubs.py The.Secret.Life.of.Walter.Mitty.2013.720p.BluRay.x264.YIFY.mp4
+
+This will download 
+
+    usage: fetchsubs.py [-h] [--mode {auto,manual}] [--season SEASON]
+                        [--episode EPISODE]
+                        filename
+
+    positional arguments:
+      filename
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --mode {auto,manual}
+      --season SEASON       season number
+      --episode EPISODE     episode number
+
+
+
     usage: fetchsubs.py [-h] show season episode
 
     positional arguments:
