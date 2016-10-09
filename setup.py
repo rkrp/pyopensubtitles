@@ -9,7 +9,7 @@ config = {
     'url': 'https://github.com/rkrp/pyopensubtitles',
     'download_url': 'https://github.com/rkrp/pyopensubtitles',
     'author_email': 'krp@gtux.in',
-    'version': '0.4',
+    'version': '0.6',
     'install_requires': ['guessit'],
     'packages': ['pyopensubtitles'],
     'scripts': ['bin/fetchsubs.py'],
