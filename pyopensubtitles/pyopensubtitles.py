@@ -2,14 +2,14 @@ from guessit import guessit
 import xmlrpclib
 import zlib
 from settings import *
-from . import exceptions
+from exceptions import *
 
 class PyOpenSubtitles:
     def __init__(self):
         self.remote = xmlrpclib.ServerProxy(URL)
         session = self.remote.LogIn(USERNAME, PASSWORD, LANGUAGE, USERAGENT)
         if session['status'] != "200 OK":
-            raise LoginError
+            raise LoginError(session['status'])
 
         self.token = session['token']
 

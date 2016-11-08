@@ -1,5 +1,5 @@
 LANGUAGE = "eng"
-USERAGENT = "OSTestUserAgent"
+USERAGENT = "OSTestUserAgentTemp"
 
 """
 Default credentials
